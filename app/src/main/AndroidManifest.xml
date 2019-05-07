@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="game.qyj.google.sdk">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="game.qyj.google.sdk.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="game.qyj.google.sdk.MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
+
+        //-------------------------------游戏参数-------------------------------------
+        <meta-data
+            android:name="PID"
+            android:value="1" />
+        <meta-data
+            android:name="GID"
+            android:value="14" />
+
+        //IS_TEST 切换环境时记得改这里
+        //"0";//正式服
+        //"1";//测试服
+        <meta-data
+            android:name="IS_TEST"
+            android:value="1" />
+
+        //是否打印log
+        //0:不打印log
+        //1:打印log
+        <meta-data
+            android:name="SHOW_LOG"
+            android:value="1" />
+
+        //----------------------------------google 登陆----------------------------------
+        <meta-data
+            android:name="GOOGLE_CLIENT_ID"
+            android:value="486693146424-qsk03bl7vfjnrfdg6nhgc147ha8btf8h.apps.googleusercontent.com" />
+
+        //---------------------------------appsFlyers 事件上报---------------------------
+        <meta-data
+            android:name="AF_DEV_KEY"
+            android:value="Yfx3hTXYzqNUZtNMauvDM7" />
+
+        //myCard包需要配置追踪渠道
+        <meta-data android:name="CHANNEL" android:value="2a.com" />
+
+        //--------------------------------facebook登陆和事件上报------------------------
+
+        //facebook_app_id和fb_login_protocol_scheme请在values/strings.xml中配置
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        //禁用自动事件记录
+        <meta-data
+            android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+            android:value="false" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter><action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="注销" />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/sdk_register"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="SDK注册"
+            android:background="?android:attr/selectableItemBackground"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/sdk_login"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="SDK登陆"
+            android:background="?android:attr/selectableItemBackground"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/google_pay"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="google支付" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/email_verify"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:drawable/list_selector_background"
+            android:gravity="center"
+            android:text="邮箱验证" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/wap_pay"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:drawable/list_selector_background"
+            android:gravity="center"
+            android:text="wap支付" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</android.support.constraint.ConstraintLayout>

@@ -60,6 +60,14 @@
             android:gravity="center"
             android:text="wap支付" />
 
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/get_server_list"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:drawable/list_selector_background"
+            android:gravity="center"
+            android:text="获取区服列表" />
+
     </android.support.v7.widget.LinearLayoutCompat>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="game.qyj.google.sdk">
+    package="game.sgyy.google.sdk">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="game.qyj.google.sdk.SplashActivity"
+            android:name="game.sgyy.google.sdk.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="game.qyj.google.sdk.MainActivity"
+        <activity android:name="game.sgyy.google.sdk.MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>
@@ -31,14 +31,14 @@
             android:value="1" />
         <meta-data
             android:name="GID"
-            android:value="14" />
+            android:value="19" />
 
         //IS_TEST 切换环境时记得改这里
         //"0";//正式服
         //"1";//测试服
         <meta-data
             android:name="IS_TEST"
-            android:value="1" />
+            android:value="0" />
 
         //是否打印log
         //0:不打印log
@@ -76,6 +76,11 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
+
+        <provider android:authorities="com.facebook.app.FacebookContentProvider{778549692526091}"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true"/>
+
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">

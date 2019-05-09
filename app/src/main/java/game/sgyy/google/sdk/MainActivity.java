@@ -1,4 +1,4 @@
-package game.qyj.google.sdk;
+package game.sgyy.google.sdk;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +8,12 @@ import android.widget.Toast;
 
 import com.child.sdk.BaseChildApi;
 import com.common.lib.entity.CosumerData;
+import com.common.lib.entity.ProductData;
 import com.common.lib.entity.UserInfo;
 import com.common.lib.listener.AppLoginListener;
 import com.common.lib.listener.FloatAccountChangeListner;
 import com.common.lib.listener.LogoutListener;
+import com.common.lib.listener.OnGetServerListListener;
 import com.common.lib.sdk.GameAction;
 import com.common.lib.utils.FastJson;
 import com.common.lib.utils.L;
@@ -32,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         baseChildApi = new BaseChildApi(this);
         baseChildApi.active();
-
         //注册悬浮窗切换账号监听
         baseChildApi.setOnFloatAccountChangeListener(new FloatAccountChangeListner() {
             @Override
@@ -163,34 +165,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        baseChildApi.checkIsLogin(this, new AppLoginListener() {
-//            @Override
-//            public void onLoginSuccess(String data) {
-//                baseChildApi.showFloatView(MainActivity.this);
-////                L.e("登陆成功--->", data);
-//            }
-//
-//            @Override
-//            public void onLoginFailed(int code, String msg) {
-//                Toast.makeText(MainActivity.this, "登陆失败", Toast.LENGTH_SHORT).show();
-//                L.e("登陆失败--->", msg);
-//            }
-//        });
 
+        findViewById(R.id.get_server_list).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                baseChildApi.getServerList("0", new OnGetServerListListener() {
+                    @Override
+                    public void onSuccess(String s) {
+                        Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
+                    }
 
-        submmitInfo();
+                    @Override
+                    public void onFailed(int i, String s) {
+                        Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+//        submmitInfo();
 
 //        submmitPayInfo();
 
     }
 
-//    private void submmitPayInfo() {
-//        ProductData productData = new ProductData();
-//        productData.setPrice_amount("590");//商品价格,只能填数值不要带货币单位
-//        productData.setId("hy_590");//product_id
-//        productData.setPrice_currency_code("TWD");//currency_code,货币单位
-//        baseChildApi.submitPayInfo(this,productData);
-//    }
+    private void submmitPayInfo() {
+        ProductData productData = new ProductData();
+        productData.setPrice_amount("590");//商品价格,只能填数值不要带货币单位
+        productData.setId("hy_590");//product_id
+        productData.setPrice_currency_code("TWD");//currency_code,货币单位
+        baseChildApi.submitPayInfo(this,productData);
+    }
 
     private void submmitInfo() {
         CosumerData cosumerData = new CosumerData();

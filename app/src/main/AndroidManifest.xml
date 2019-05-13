@@ -31,14 +31,14 @@
             android:value="1" />
         <meta-data
             android:name="GID"
-            android:value="19" />
+            android:value="14" />
 
         //IS_TEST 切换环境时记得改这里
         //"0";//正式服
         //"1";//测试服
         <meta-data
             android:name="IS_TEST"
-            android:value="0" />
+            android:value="1" />
 
         //是否打印log
         //0:不打印log
@@ -50,7 +50,7 @@
         //----------------------------------google 登陆----------------------------------
         <meta-data
             android:name="GOOGLE_CLIENT_ID"
-            android:value="486693146424-qsk03bl7vfjnrfdg6nhgc147ha8btf8h.apps.googleusercontent.com" />
+            android:value="967770269877-h34a98smo28ugum1eleq1vo5umqhruq9.apps.googleusercontent.com" />
 
         //---------------------------------appsFlyers 事件上报---------------------------
         <meta-data

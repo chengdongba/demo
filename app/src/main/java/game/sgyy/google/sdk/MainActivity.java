@@ -15,6 +15,7 @@ import com.common.lib.listener.FloatAccountChangeListner;
 import com.common.lib.listener.LogoutListener;
 import com.common.lib.listener.OnGetServerListListener;
 import com.common.lib.sdk.GameAction;
+import com.common.lib.utils.CommonUtil;
 import com.common.lib.utils.FastJson;
 import com.common.lib.utils.L;
 
@@ -45,10 +46,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onLogoutSuccess() {
 //                        Toast.makeText(MainActivity.this, "注销成功", Toast.LENGTH_SHORT).show();
+                        CommonUtil.commitGameExit("123123");
                         baseChildApi.checkIsLogin(MainActivity.this, new AppLoginListener() {
                             @Override
                             public void onLoginSuccess(String s) {
                                 baseChildApi.showFloatView(MainActivity.this);
+                                CommonUtil.commitGameLogin("123123");
                             }
 
                             @Override
@@ -78,10 +81,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onLogoutSuccess() {
                         Toast.makeText(MainActivity.this, "注销成功", Toast.LENGTH_SHORT).show();
+                        CommonUtil.commitGameExit("123123");
                         baseChildApi.checkIsLogin(MainActivity.this, new AppLoginListener() {
                             @Override
                             public void onLoginSuccess(String s) {
                                 baseChildApi.showFloatView(MainActivity.this);
+                                CommonUtil.commitGameExit("123123");
                             }
 
                             @Override
@@ -147,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
                         baseChildApi.showFloatView(MainActivity.this);
                         L.e("登陆成功--->", s);
                         UserInfo userInfo = (UserInfo) FastJson.pareseObject(s, UserInfo.class);
+                        CommonUtil.commitGameLogin("123123");
                     }
 
                     @Override
@@ -261,6 +267,7 @@ public class MainActivity extends AppCompatActivity {
                     UserInfo userInfo = (UserInfo) FastJson.pareseObject(msg, UserInfo.class);
                 }
                 baseChildApi.showFloatView(this);
+                CommonUtil.commitGameLogin("123123");
                 break;
             default:
                 break;
@@ -283,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-
+        CommonUtil.commitGameExit("123123");
         baseChildApi.destroySDK();
 
         super.onDestroy();

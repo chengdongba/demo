@@ -58,7 +58,7 @@ dependencies {
     compile(name: 'common', ext: 'aar') {
         exclude module: 'com.android.support:appcompat-v7'
     }
-    implementation 'com.android.billingclient:billing:1.2'
+    implementation 'com.android.billingclient:billing:2.0.0'
 
     // Firebase Authentication
     api 'com.google.firebase:firebase-core:16.0.3'

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.qyj.google.sdk">
+    package="com.fx.google.sdk">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.qyj.google.sdk.SplashActivity"
+            android:name="com.fx.google.sdk.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.qyj.google.sdk.MainActivity"
+        <activity android:name="com.fx.google.sdk.MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>
@@ -50,7 +50,7 @@
         //----------------------------------google 登陆----------------------------------
         <meta-data
             android:name="GOOGLE_CLIENT_ID"
-            android:value="967770269877-h34a98smo28ugum1eleq1vo5umqhruq9.apps.googleusercontent.com" />
+            android:value="1042169865539-j8ia4nph7pc9fpkhvrspuecd53rc42jr.apps.googleusercontent.com" />
 
         //---------------------------------appsFlyers 事件上报---------------------------
         <meta-data

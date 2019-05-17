@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "486693146424",
-    "firebase_url": "https://game-qyj.firebaseio.com",
-    "project_id": "game-qyj",
-    "storage_bucket": "game-qyj.appspot.com"
+    "project_number": "1042169865539",
+    "firebase_url": "https://ztft-89fd1.firebaseio.com",
+    "project_id": "ztft-89fd1",
+    "storage_bucket": "ztft-89fd1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:486693146424:android:54694b9e103f175c",
+        "mobilesdk_app_id": "1:1042169865539:android:bfdb08a61223b471",
         "android_client_info": {
-          "package_name": "com.qyj.google.sdk"
+          "package_name": "com.fx.google.sdk"
         }
       },
       "oauth_client": [
         {
-          "client_id": "486693146424-rmjuc3t5tcef7p2cgg628sldaebrcrij.apps.googleusercontent.com",
+          "client_id": "1042169865539-16k2e88r2ma6qdeh1pj5s1g8qc001unr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.qyj.google.sdk",
+            "package_name": "com.fx.google.sdk",
             "certificate_hash": "a0cd073a3fdf5e14106f838e2b3d30fa2017e09a"
           }
         },
         {
-          "client_id": "486693146424-qsk03bl7vfjnrfdg6nhgc147ha8btf8h.apps.googleusercontent.com",
+          "client_id": "1042169865539-j8ia4nph7pc9fpkhvrspuecd53rc42jr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA0p1QvGbL8O00yuQZagAwzNx-n_Z10obI"
+          "current_key": "AIzaSyDm0wQrcgrG24jgyykKPL4ibYPJT3eVT1Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "486693146424-qsk03bl7vfjnrfdg6nhgc147ha8btf8h.apps.googleusercontent.com",
+              "client_id": "1042169865539-j8ia4nph7pc9fpkhvrspuecd53rc42jr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -45,35 +45,35 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:486693146424:android:588d0d6090050b3d",
+        "mobilesdk_app_id": "1:1042169865539:android:9fbaf8388eab5c34",
         "android_client_info": {
-          "package_name": "com.qyj.normal.sdk"
+          "package_name": "com.fx.normal.sdk"
         }
       },
       "oauth_client": [
         {
-          "client_id": "486693146424-e2l7niaav17e8vogqkeeod3718s2g3gg.apps.googleusercontent.com",
+          "client_id": "1042169865539-9tdv86oghhl9lkb6fmi51bb9p4m173n9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.qyj.normal.sdk",
+            "package_name": "com.fx.normal.sdk",
             "certificate_hash": "a0cd073a3fdf5e14106f838e2b3d30fa2017e09a"
           }
         },
         {
-          "client_id": "486693146424-qsk03bl7vfjnrfdg6nhgc147ha8btf8h.apps.googleusercontent.com",
+          "client_id": "1042169865539-j8ia4nph7pc9fpkhvrspuecd53rc42jr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA0p1QvGbL8O00yuQZagAwzNx-n_Z10obI"
+          "current_key": "AIzaSyDm0wQrcgrG24jgyykKPL4ibYPJT3eVT1Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "486693146424-qsk03bl7vfjnrfdg6nhgc147ha8btf8h.apps.googleusercontent.com",
+              "client_id": "1042169865539-j8ia4nph7pc9fpkhvrspuecd53rc42jr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

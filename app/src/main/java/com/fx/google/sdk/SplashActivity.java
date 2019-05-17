@@ -1,4 +1,4 @@
-package com.qyj.google.sdk;
+package com.fx.google.sdk;
 
 import android.content.Context;
 import android.content.Intent;

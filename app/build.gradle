@@ -13,7 +13,7 @@ android {
 
     compileSdkVersion 26
     defaultConfig {
-        applicationId "game.sgyy.google.sdk"
+        applicationId "com.qyj.google.sdk"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1

@@ -1,4 +1,4 @@
-package game.sgyy.google.sdk;
+package com.qyj.google.sdk;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

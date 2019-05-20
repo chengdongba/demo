@@ -13,7 +13,7 @@ import com.common.lib.entity.UserInfo;
 import com.common.lib.listener.AppLoginListener;
 import com.common.lib.listener.FloatAccountChangeListner;
 import com.common.lib.listener.LogoutListener;
-import com.common.lib.listener.OnGetServerListListener;
+//import com.common.lib.listener.OnGetServerListListener;
 import com.common.lib.sdk.GameAction;
 import com.common.lib.utils.CommonUtil;
 import com.common.lib.utils.FastJson;
@@ -46,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onLogoutSuccess() {
 //                        Toast.makeText(MainActivity.this, "注销成功", Toast.LENGTH_SHORT).show();
-                        CommonUtil.commitGameExit("123123");
+//                        CommonUtil.commitGameExit("123123");
                         baseChildApi.checkIsLogin(MainActivity.this, new AppLoginListener() {
                             @Override
                             public void onLoginSuccess(String s) {
                                 baseChildApi.showFloatView(MainActivity.this);
-                                CommonUtil.commitGameLogin("123123");
+//                                CommonUtil.commitGameLogin("123123");
                             }
 
                             @Override
@@ -81,12 +81,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onLogoutSuccess() {
                         Toast.makeText(MainActivity.this, "注销成功", Toast.LENGTH_SHORT).show();
-                        CommonUtil.commitGameExit("123123");
+//                        CommonUtil.commitGameExit("123123");
                         baseChildApi.checkIsLogin(MainActivity.this, new AppLoginListener() {
                             @Override
                             public void onLoginSuccess(String s) {
                                 baseChildApi.showFloatView(MainActivity.this);
-                                CommonUtil.commitGameExit("123123");
+//                                CommonUtil.commitGameExit("123123");
                             }
 
                             @Override
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String productId = "sg_1";
+                String productId = "com.2a.fxft.pay670";
                 String extension = "透传参数111";//如果cp没有透传参数,请传空字符串
 
                 CosumerData cosumerData = new CosumerData();
@@ -144,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.sdk_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 //                baseChildApi.sdkLogin(MainActivity.this);
                 baseChildApi.checkIsLogin(MainActivity.this, new AppLoginListener() {
                     @Override
@@ -152,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                         baseChildApi.showFloatView(MainActivity.this);
                         L.e("登陆成功--->", s);
                         UserInfo userInfo = (UserInfo) FastJson.pareseObject(s, UserInfo.class);
-                        CommonUtil.commitGameLogin("123123");
+//                        CommonUtil.commitGameLogin("123123");
                     }
 
                     @Override
@@ -160,7 +159,6 @@ public class MainActivity extends AppCompatActivity {
                         L.e("登陆失败--->", s);
                     }
                 });
-
             }
         });
 
@@ -172,22 +170,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        findViewById(R.id.get_server_list).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                baseChildApi.getServerList("0", new OnGetServerListListener() {
-                    @Override
-                    public void onSuccess(String s) {
-                        Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFailed(int i, String s) {
-                        Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-        });
+//        findViewById(R.id.get_server_list).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                baseChildApi.getServerList("0", new OnGetServerListListener() {
+//                    @Override
+//                    public void onSuccess(String s) {
+//                        Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onFailed(int i, String s) {
+//                        Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//            }
+//        });
 
 //        submmitInfo();
 
@@ -262,12 +260,14 @@ public class MainActivity extends AppCompatActivity {
             case RESULT_CODE_FACEBOOK_LOGIN_SUCCESS://facebook登陆成功
 
             case RESULT_CODE_GOOGLE_LOGIN_SUCCESS://google登陆成功
+                L.e("登陆成功--->1", "11111111111");
                 if (data.hasExtra(SUCCESS_MESSAGE_LOGIN)) {
                     String msg = data.getStringExtra(SUCCESS_MESSAGE_LOGIN);
+                    L.e("登陆成功--->11", msg);
                     UserInfo userInfo = (UserInfo) FastJson.pareseObject(msg, UserInfo.class);
                 }
                 baseChildApi.showFloatView(this);
-                CommonUtil.commitGameLogin("123123");
+//                CommonUtil.commitGameLogin("123123");
                 break;
             default:
                 break;
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        CommonUtil.commitGameExit("123123");
+//        CommonUtil.commitGameExit("123123");
         baseChildApi.destroySDK();
 
         super.onDestroy();

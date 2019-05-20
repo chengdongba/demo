@@ -1,4 +1,4 @@
-package game.sgyy.google.sdk;
+package com.qyj.google.sdk;
 
 import android.content.Context;
 import android.content.Intent;

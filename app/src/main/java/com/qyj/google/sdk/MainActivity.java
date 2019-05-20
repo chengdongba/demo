@@ -1,4 +1,4 @@
-package game.sgyy.google.sdk;
+package com.qyj.google.sdk;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String productId = "sg_1";
+                String productId = "qyj_14.99";
                 String extension = "透传参数111";//如果cp没有透传参数,请传空字符串
 
                 CosumerData cosumerData = new CosumerData();

@@ -50,7 +50,7 @@
         //----------------------------------google 登陆----------------------------------
         <meta-data
             android:name="GOOGLE_CLIENT_ID"
-            android:value="967770269877-h34a98smo28ugum1eleq1vo5umqhruq9.apps.googleusercontent.com" />
+            android:value="486693146424-qsk03bl7vfjnrfdg6nhgc147ha8btf8h.apps.googleusercontent.com" />
 
         //---------------------------------appsFlyers 事件上报---------------------------
         <meta-data

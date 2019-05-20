@@ -31,6 +31,7 @@ import static com.common.lib.sdk.Constant.SUCCESS_MESSAGE_LOGIN;
 
 public class MainActivity extends AppCompatActivity {
     private BaseChildApi baseChildApi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 cosumerData.setRole_name("嘎董");//角色姓名
                 cosumerData.setServer_id("63");//游戏服务器id
 
-                baseChildApi.sdkPay(MainActivity.this,productId,cosumerData,extension);
+                baseChildApi.sdkPay(MainActivity.this, productId, cosumerData, extension);
 
             }
         });
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                 cosumerData.setServer_id("63");//平台游戏服ID
                 cosumerData.setCpsid("909999");//cp游戏服ID
                 String extension = "透传参数";//如果cp没有透传参数,请传空字符串
-                baseChildApi.webPay(MainActivity.this,cosumerData,extension);
+                baseChildApi.webPay(MainActivity.this, cosumerData, extension);
             }
         });
 
@@ -178,12 +179,12 @@ public class MainActivity extends AppCompatActivity {
                 baseChildApi.getServerList("0", new OnGetServerListListener() {
                     @Override
                     public void onSuccess(String s) {
-                        Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onFailed(int i, String s) {
-                        Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -200,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
         productData.setPrice_amount("590");//商品价格,只能填数值不要带货币单位
         productData.setId("hy_590");//product_id
         productData.setPrice_currency_code("TWD");//currency_code,货币单位
-        baseChildApi.submitPayInfo(this,productData);
+        baseChildApi.submitPayInfo(this, productData);
     }
 
     private void submmitInfo() {
@@ -216,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
 //        baseChildApi.submitUserInfo(this, GameAction.LEVEL_ACHEVIED_65,cosumerData);
 //        baseChildApi.submitUserInfo(this, GameAction.LEVEL_ACHEVIED_100,cosumerData);
 //        baseChildApi.submitUserInfo(this, GameAction.LEVEL_ACHEVIED_150,cosumerData);
-        baseChildApi.submitUserInfo(this, GameAction.LEVEL_ACHEVIED,cosumerData);
+        baseChildApi.submitUserInfo(this, GameAction.LEVEL_ACHEVIED, cosumerData);
 
     }
 
@@ -230,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
                 onLoginResult(resultCode, data);
                 break;
             case REQUEST_CODE_PAY: //sdk支付
-                onPayResult(resultCode,data);
+                onPayResult(resultCode, data);
                 break;
             default:
                 break;
@@ -238,14 +239,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void onPayResult(int resultCode,Intent data) {
+    private void onPayResult(int resultCode, Intent data) {
         switch (resultCode) {
             case RESULT_CODE_GOOGLE_PAY_SUCCESS:
-                Toast.makeText(MainActivity.this,"支付校驗成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "支付校驗成功", Toast.LENGTH_SHORT).show();
                 break;
             case RESULT_CODE_GOOGLE_PAY_FAILED:
                 String errorMsg = "支付校驗失敗";
-                if (data!=null&&data.hasExtra(ERROR_MESSAGE_GOOGLE_PAY)) {
+                if (data != null && data.hasExtra(ERROR_MESSAGE_GOOGLE_PAY)) {
                     errorMsg = data.getStringExtra(ERROR_MESSAGE_GOOGLE_PAY);
                 }
 //                Toast.makeText(MainActivity.this,errorMsg, Toast.LENGTH_SHORT).show();
@@ -258,10 +259,9 @@ public class MainActivity extends AppCompatActivity {
     private void onLoginResult(int resultCode, Intent data) {
         switch (resultCode) {
             case RESULT_CODE_LOGIN_SUCCESS://账号密码登陆成功
-
             case RESULT_CODE_FACEBOOK_LOGIN_SUCCESS://facebook登陆成功
-
             case RESULT_CODE_GOOGLE_LOGIN_SUCCESS://google登陆成功
+                L.e("login-->", " google");
                 if (data.hasExtra(SUCCESS_MESSAGE_LOGIN)) {
                     String msg = data.getStringExtra(SUCCESS_MESSAGE_LOGIN);
                     UserInfo userInfo = (UserInfo) FastJson.pareseObject(msg, UserInfo.class);

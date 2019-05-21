@@ -27,7 +27,7 @@
             android:value="1" />
         <meta-data
             android:name="GID"
-            android:value="14" />
+            android:value="17" />
         <meta-data
             android:name="IS_TEST"
             android:value="1" />

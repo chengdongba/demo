@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String productId = "com.2a.fxft.pay670";
+                String productId = "com.2a.fxft.pay33";
                 String extension = "透传参数111";//如果cp没有透传参数,请传空字符串
 
                 CosumerData cosumerData = new CosumerData();

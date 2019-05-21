@@ -1,6 +1,9 @@
 package com.qyj.google.sdk;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +21,18 @@ import com.common.lib.sdk.GameAction;
 import com.common.lib.utils.CommonUtil;
 import com.common.lib.utils.FastJson;
 import com.common.lib.utils.L;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.share.Sharer;
+import com.facebook.share.model.ShareContent;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.model.ShareMediaContent;
+import com.facebook.share.model.SharePhoto;
+import com.facebook.share.model.SharePhotoContent;
+import com.facebook.share.model.ShareVideo;
+import com.facebook.share.widget.ShareButton;
+import com.facebook.share.widget.ShareDialog;
 
 import static com.common.lib.sdk.Constant.ERROR_MESSAGE_GOOGLE_PAY;
 import static com.common.lib.sdk.Constant.REQUEST_CODE_LOGIN;
@@ -190,10 +205,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        testShare();
 //        submmitInfo();
 
 //        submmitPayInfo();
 
+    }
+
+    private void testShare() {
+        findViewById(R.id.fb_share_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                baseChildApi.fbShare(MainActivity.this,"https://play.google.com/store/apps/details?id=game.sgyy.google.sdk");
+            }
+        });
     }
 
     private void submmitPayInfo() {

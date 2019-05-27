@@ -14,6 +14,7 @@ import com.common.lib.entity.CosumerData;
 import com.common.lib.entity.ProductData;
 import com.common.lib.entity.UserInfo;
 import com.common.lib.listener.AppLoginListener;
+import com.common.lib.listener.FbShareListener;
 import com.common.lib.listener.FloatAccountChangeListner;
 import com.common.lib.listener.LogoutListener;
 import com.common.lib.listener.OnGetServerListListener;
@@ -34,6 +35,7 @@ import com.facebook.share.model.ShareVideo;
 import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
 
+import static com.common.lib.BaseCommonApi.sCallbackManager;
 import static com.common.lib.sdk.Constant.ERROR_MESSAGE_GOOGLE_PAY;
 import static com.common.lib.sdk.Constant.REQUEST_CODE_LOGIN;
 import static com.common.lib.sdk.Constant.REQUEST_CODE_PAY;
@@ -216,7 +218,22 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.fb_share_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                baseChildApi.fbShare(MainActivity.this,"https://play.google.com/store/apps/details?id=game.sgyy.google.sdk");
+                baseChildApi.fbShare(MainActivity.this, "https://play.google.com/store/apps/details?id=game.sgyy.google.sdk", new FbShareListener() {
+                    @Override
+                    public void onSuccess(Sharer.Result result) {
+                        Toast.makeText(MainActivity.this,"share success",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        Toast.makeText(MainActivity.this,"user canceled",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(FacebookException e) {
+                        Toast.makeText(MainActivity.this,"share error",Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }
@@ -261,7 +278,9 @@ public class MainActivity extends AppCompatActivity {
             default:
                 break;
         }
-
+        if (null!=sCallbackManager){
+            sCallbackManager.onActivityResult(requestCode,resultCode,data);//fb分享
+        }
     }
 
     private void onPayResult(int resultCode, Intent data) {

@@ -218,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.fb_share_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                baseChildApi.fbShare(MainActivity.this, "https://play.google.com/store/apps/details?id=game.sgyy.google.sdk", new FbShareListener() {
+                baseChildApi.fbShare(MainActivity.this, "https://www.2a.com/godsfall/wap/event/facebook.html", new FbShareListener() {
                     @Override
                     public void onSuccess(Sharer.Result result) {
                         Toast.makeText(MainActivity.this,"share success",Toast.LENGTH_SHORT).show();

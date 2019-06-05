@@ -31,7 +31,6 @@
 
         </activity>
 
-        //-------------------------------游戏参数-------------------------------------
         <meta-data
             android:name="PID"
             android:value="1" />
@@ -39,41 +38,41 @@
             android:name="GID"
             android:value="14" />
 
-        //IS_TEST 切换环境时记得改这里
+        <!--//IS_TEST 切换环境时记得改这里
         //"0";//正式服
-        //"1";//测试服
+        //"1";//测试服-->
         <meta-data
             android:name="IS_TEST"
             android:value="1" />
 
-        //是否打印log
+        <!--//是否打印log
         //0:不打印log
-        //1:打印log
+        //1:打印log-->
         <meta-data
             android:name="SHOW_LOG"
             android:value="1" />
 
-        //----------------------------------google 登陆----------------------------------
+        <!--google 登陆-->
         <meta-data
             android:name="GOOGLE_CLIENT_ID"
             android:value="486693146424-qsk03bl7vfjnrfdg6nhgc147ha8btf8h.apps.googleusercontent.com" />
 
-        //---------------------------------appsFlyers 事件上报---------------------------
+        <!--appsFlyers 事件上报-->
         <meta-data
             android:name="AF_DEV_KEY"
             android:value="Yfx3hTXYzqNUZtNMauvDM7" />
 
-        //myCard包需要配置追踪渠道
+        <!--//myCard包需要配置追踪渠道-->
         <meta-data android:name="CHANNEL" android:value="2a.com" />
 
-        //--------------------------------facebook登陆和事件上报------------------------
+        <!--//facebook登陆和事件上报-->
 
-        //facebook_app_id和fb_login_protocol_scheme请在values/strings.xml中配置
+        <!--//facebook_app_id和fb_login_protocol_scheme请在values/strings.xml中配置-->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        //禁用自动事件记录
+        <!--//禁用自动事件记录-->
         <meta-data
             android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
             android:value="false" />

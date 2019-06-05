@@ -1,11 +1,13 @@
 package com.qyj.google.sdk;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,18 +24,11 @@ import com.common.lib.sdk.GameAction;
 import com.common.lib.utils.CommonUtil;
 import com.common.lib.utils.FastJson;
 import com.common.lib.utils.L;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.share.Sharer;
-import com.facebook.share.model.ShareContent;
-import com.facebook.share.model.ShareLinkContent;
-import com.facebook.share.model.ShareMediaContent;
-import com.facebook.share.model.SharePhoto;
-import com.facebook.share.model.SharePhotoContent;
-import com.facebook.share.model.ShareVideo;
-import com.facebook.share.widget.ShareButton;
-import com.facebook.share.widget.ShareDialog;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import static com.common.lib.BaseCommonApi.sCallbackManager;
 import static com.common.lib.sdk.Constant.ERROR_MESSAGE_GOOGLE_PAY;
@@ -53,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         baseChildApi = new BaseChildApi(this);
         baseChildApi.active();
         //注册悬浮窗切换账号监听
@@ -218,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.fb_share_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                baseChildApi.fbShare(MainActivity.this, "https://www.2a.com/godsfall/wap/event/facebook.html", new FbShareListener() {
+                baseChildApi.fbShare(MainActivity.this, "https://2a.onelink.me/t5RV", new FbShareListener() {
                     @Override
                     public void onSuccess(Sharer.Result result) {
                         Toast.makeText(MainActivity.this,"share success",Toast.LENGTH_SHORT).show();
